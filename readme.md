@@ -7,3 +7,5 @@ nhiều lần
 	- tạo 1 profile
 	- tạo nhiều profile theo danh sách tên
 ## 2.Manager profile
+	- Open profile
+	- Delete profile
