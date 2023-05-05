@@ -20,8 +20,8 @@ def main():
 
             system('cls')
         elif option_choice == 2:
-            profiles = get_profiles()
-            if len(profiles) != 0:
+            profiles = get_profiles() # lấy danh sách folder profiles
+            if len(profiles) != 0: # kiểm tra xem danh sách có profile không => nếu có thì mở lên khong thì return và yêu cầu tạo profile
                 profile_index = int(input("Enter Profile Index: "))
                 profile_name_open = profiles[profile_index - 1]
                 system('cls')
@@ -31,7 +31,7 @@ def main():
             else:
                 print("NOT FOUND CHROME PROFILES => CREATE !")
                 return main()
-        elif option_choice == 3:
+        elif option_choice == 3: # xóa profile theo tên
             profiles = get_profiles()
             if len(profiles) != 0:
                 profile_index = int(input("Enter Profile Index: "))
