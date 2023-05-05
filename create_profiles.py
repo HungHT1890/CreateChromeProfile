@@ -18,8 +18,10 @@ def create_profile(profile_name):
         options.add_argument(f"--user-data-dir={profile_path}")
         try:
             driver = Chrome(options=options ,use_subprocess=True)
+            driver.close()
         except:
-            print(f"Create Profile Fail: {profile_name}")
+            if not path.exists(profile_path):
+                print(f"Create Profile Fail: {profile_name}")
 
 
 def manager_profiles(profile_name): # Về cách làm thì chả khác gì vs việc tạo profile căn bản là mình k báo lỗi thôi ahihihi

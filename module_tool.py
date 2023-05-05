@@ -1,4 +1,4 @@
-from os import makedirs , path , listdir
+from os import makedirs , path , listdir , system
 from shutil import rmtree
 from pathlib import Path
 
@@ -19,13 +19,19 @@ def get_folder_profile_path():
     return str(Path.cwd())
 
 def get_profiles():
-    profiles =  listdir("Profiles")
+    profiles = []
+    profiles =  [profile_name for  profile_name  in listdir("Profiles") if not profile_name.endswith('.txt')]
     profile_count = len(profiles)
-    print(f"PROFILES:  {profile_count}")
+    print(f"Profiles:  {profile_count}")
     for x in profiles:
         profile_index = profiles.index(x)
         print(f"{profile_index + 1}: {x}")
     return profiles
+def clear_chrome_process():
+    try:
+        system('taskkill /im chrome.exe')
+    except:
+        pass
     
 
 if __name__ == "__main__":
