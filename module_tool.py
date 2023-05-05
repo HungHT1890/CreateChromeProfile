@@ -32,6 +32,7 @@ def clear_chrome_process():
         system('taskkill /im chrome.exe')
     except:
         pass
+    system('cls')
     
 
 if __name__ == "__main__":
